@@ -1,4 +1,8 @@
-import express, { type Application as ExApp } from "express";
+import express, {
+  type Application as ExApp,
+  type Request,
+  type Response,
+} from "express";
 import { PrismaORM } from "./config/database.js";
 import { AuthRoutes } from "./routes/authRoutes.js";
 import { WatchListRoutes } from "./routes/watchlistRoutes.js";
@@ -29,7 +33,7 @@ class App {
   }
 
   private registerRoutes() {
-    this.instance.get("/health", (request, response) => {
+    this.instance.get("/health", (request: Request, response: Response) => {
       response.status(200).json({
         status: 200,
         message: "Everything is okay!",
