@@ -3,7 +3,7 @@ import { WatchlistStatus } from "../@types/watchlistStatus.js";
 export type WatchListItemDTO = {
   movieId: string;
   userId: string;
-  status: typeof WatchlistStatus;
+  status: WatchlistStatus;
   rating: number;
   notes: string;
 };
